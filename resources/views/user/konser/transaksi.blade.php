@@ -18,13 +18,11 @@
 
             
             <label style="font-weight:bold;">Nama Lengkap Pembeli</label>
-            <input type="text" name="nama" required value="{{ auth()->user()->name }}"
-                style="width:100%; margin-bottom:15px; padding:10px; border-radius:5px; border:none; background:#111; color:white;">
+            <input type="text" name="nama" required style="width:100%; margin-bottom:15px; padding:10px; border-radius:5px; border:none; background:#111; color:white;">
 
             
             <label style="font-weight:bold;">Alamat Email</label>
-            <input type="email" name="email" required value="{{ auth()->user()->email }}"
-                style="width:100%; margin-bottom:15px; padding:10px; border-radius:5px; border:none; background:#111; color:white;">
+            <input type="email" name="email" required style="width:100%; margin-bottom:15px; padding:10px; border-radius:5px; border:none; background:#111; color:white;">
 
             
             <label style="font-weight:bold;">Jumlah Tiket</label>
@@ -36,9 +34,6 @@
             <select name="kelas" required
                 style="width:100%; margin-bottom:20px; padding:10px; border-radius:5px; border:none; background:#111; color:white;">
                 <option value="">-- Pilih Kelas --</option>
-                @foreach ($kelas as $k)
-                    <option value="{{ $k->id }}">{{ $k->nama_kelas }} - Rp {{ number_format($k->harga, 0, ',', '.') }}</option>
-                @endforeach
             </select>
 
             
