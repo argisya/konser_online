@@ -24,7 +24,13 @@
         <div class="nav-links">
             <a href="{{ route('user.index') }}">Home</a>
             <a href="{{ route('user.konser.index') }}">Konser</a>
-            <a href="#">Login</a>
+            @if (session('user_id') == true)
+            <a href="#">Hi, {{ session('user_name') }}!</a>
+            <a href="{{ route('user.login.logout') }}">Logout</a>
+            @elseif (session('user_id') == false)
+            <a href="{{ route('user.login.register') }}">Daftar</a>
+            <a href="{{ route('user.login.index') }}">Login</a>
+            @endif
         </div>
     </nav>
 
