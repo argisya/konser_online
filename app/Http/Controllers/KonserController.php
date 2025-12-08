@@ -34,14 +34,22 @@ class KonserController extends Controller
 
         // Generate Order ID
         $order_id = 'ORD-' . strtoupper(uniqid());
+
+        if($request->kelas == 'Regular'){
+            $harga = 250000;
+        }elseif($request->kelas == 'VIP'){
+            $harga = 500000;
+        }elseif($request->kelas == 'VVIP'){
+            $harga = 750000;
+        }
         
         // Hitung total harga
-        $jumlah = $request->jumlah;
-        $total =  $jumlah;
+        $total = $harga * $request->jumlah;
 
         // Simpan ke database
         Transaksi::create([
             'order_id' => $order_id,
+            'konser_id' => $request->konser_id,
             'nama' => $request->nama,
             'email' => $request->email,
             'jumlah' => $request->jumlah,
@@ -63,8 +71,10 @@ class KonserController extends Controller
     public function struk(String $order_id)
     {
         $transaksi = Transaksi::where('order_id', $order_id)->firstOrFail();
+        $detail = Konser::where('id', $transaksi->konser_id)->firstOrFail();
         return view('user.konser.struk', [
             'transaksi' => $transaksi,
+            'detail' => $detail
         ]);
     }
 }

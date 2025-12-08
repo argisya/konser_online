@@ -8,21 +8,29 @@
         <p class="text-center mb-2">Berikut adalah detail kuitansi Anda. Simpan baik-baik ya!</p>
         
         <div class="kuitansi-detail">
-            <p><strong>No. Transaksi:</strong> INV-20251208-8BBEA</p>
-            <p><strong>Nama Konser:</strong> Sunset di Kebun 2025</p>
-            <p><strong>Nama Pembeli:</strong> Rizla Azc</p>
-            <p><strong>Email Pembeli:</strong> azchafahrezi@gmail.com</p>
-            <p><strong>Jumlah Tiket:</strong> 1 buah</p>
-            <p><strong>Kelas Tiket:</strong> VIP</p>
-            <p><strong>Harga Satuan:</strong> Rp 750.000</p>
+            <p><strong>No. Transaksi:</strong> {{ $transaksi->order_id }}</p>
+            <p><strong>Nama Konser:</strong> {{ $detail->nama }}</p>
+            <p><strong>Nama Pembeli:</strong> {{ $transaksi->nama }}</p>
+            <p><strong>Email Pembeli:</strong> {{ $transaksi->email }}</p>
+            <p><strong>Jumlah Tiket:</strong> {{ $transaksi->jumlah }}</p>
+            <p><strong>Kelas Tiket:</strong> {{ $transaksi->kelas }}</p>
+            <p><strong>Harga Satuan:</strong>
+                @if($transaksi->kelas == 'Regular')
+                    Rp {{ number_format(250000, 0, ',', '.') }}
+                @elseif($transaksi->kelas == 'VIP')
+                    Rp {{ number_format(500000, 0, ',', '.') }}
+                @elseif($transaksi->kelas == 'VVIP')
+                    Rp {{ number_format(750000, 0, ',', '.') }}
+                @endif
+            </p>
         </div>
 
         <div class="kuitansi-total">
-            <h3>Total Pembayaran: Rp 750.000</h3>
+            <h3>Total Pembayaran: {{  number_format($transaksi->total, 0, ',', '.') }}</h3>
         </div>
 
         <div class="kuitansi-actions">
-            <a href="{{ route('user.index') }}" class="btn btn-primary">Kembali ke Daftar Konser</a>
+            <a href="{{ route('user.konser.index') }}" class="btn btn-primary">Kembali ke Daftar Konser</a>
             <a href="download_tiket.php" class="btn btn-primary" target="_blank">Unduh Tiket</a>
         </div>
          <p class="text-center mt-2" style="font-size:0.9em; color:#aaa;">Terima kasih telah melakukan pembelian tiket melalui Info Konser Bogor!</p>

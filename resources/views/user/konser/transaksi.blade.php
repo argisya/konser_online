@@ -8,7 +8,7 @@
 
             <form method="POST" action="{{ route('user.konser.pembayaranProcess') }}" class="ticket-form">
                 @csrf
-                {{-- <input type="hidden" name="order_id" value="{{ $konser->id }}"> --}}
+                <input type="hidden" name="konser_id" value="{{ $konser->id }}">
 
                 <label>Nama Lengkap Pembeli</label>
                 <input type="text" name="nama" placeholder="Masukkan nama lengkap" required>

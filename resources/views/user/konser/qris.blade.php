@@ -15,7 +15,7 @@
                 <img src="{{ asset('storage/img-konser/dummy_qris.png') }}" class="qris-box" alt="QRIS">
 
                 <div class="payment-info-wrapper">
-                    <p class="pay-total"><b>Total Pembayaran:</b> Rp {{ number_format($transaksi->total_bayar, 0, ',', '.') }}</p>
+                    <p class="pay-total"><b>Total Pembayaran:</b> Rp {{ number_format($transaksi->total, 0, ',', '.') }}</p>
                     <p class="pay-transaksi"><b>Order ID:</b> {{ $transaksi->order_id }}</p>
                     <p class="pay-time-title">Selesaikan Pembayaran Dalam:</p>
                     <!-- COUNTDOWN -->

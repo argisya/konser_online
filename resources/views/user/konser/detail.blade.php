@@ -15,7 +15,6 @@
                 <p><strong>Lokasi:</strong> {{ $konser->lokasi }}</p>
                 <p><strong>Waktu:</strong> {{ $konser->waktu }}</p>
                 <p class="description"><strong>Deskripsi:</strong> {{ $konser->deskripsi }}</p>
-                <p><strong>Harga Tiket:</strong> Rp {{ number_format($konser->harga_tiket, 0, ',', '.') }}</p>
 
                 <a href="{{ route('user.konser.transaksi', ['id' => $konser->id]) }}" class="btn btn-primary">Pesan Tiket</a>
             </div>
