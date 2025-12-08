@@ -54,6 +54,7 @@ class KonserController extends Controller
             'email' => $request->email,
             'jumlah' => $request->jumlah,
             'kelas' => $request->kelas,
+            'harga' => $harga,
             'total' => $total
         ]);
 

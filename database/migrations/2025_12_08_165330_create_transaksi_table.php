@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('kelas');
             $table->integer('jumlah');
+            $table->decimal('harga', 10, 2);
             $table->decimal('total', 10, 2);
             $table->enum('status', ['pending', 'paid', 'expired'])->default('pending');
             $table->timestamps();

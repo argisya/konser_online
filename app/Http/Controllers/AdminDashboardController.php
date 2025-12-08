@@ -10,13 +10,24 @@ class AdminDashboardController extends Controller
 {
     public function index()
     {
+        $bulanKonser = [];
+        $jumlahTransaksiPerBulan = [];
+
+        for ($i = 11; $i >= 0; $i--) {
+            $bulan = now()->subMonths($i);
+            $bulanKonser[] = $bulan->format('M Y');
+
+            $count = Transaksi::whereYear('created_at', $bulan->year)->whereMonth('created_at', $bulan->month)->count();
+            $jumlahTransaksiPerBulan[] = $count;
+        }
+
         return view('admin.dashboard', [
-        'jumlahKonser' => Konser::count(),
-        'totalTransaksi' => Transaksi::count(),
-        'totalPendapatan' => Transaksi::sum('total'),
-        'tanggalTerakhir' => Konser::latest()->value('tanggal'),
-        'bulanKonser' => Transaksi::selectRaw('MONTHNAME(created_at) as bulan')->groupBy('bulan')->pluck('bulan'),
-        'jumlahTransaksiPerBulan' => Transaksi::selectRaw('COUNT(*) as total')->groupByRaw('MONTH(created_at)')->pluck('total'),
-    ]);
+            'jumlahKonser' => Konser::count(),
+            'totalTransaksi' => Transaksi::count(),
+            'totalPendapatan' => Transaksi::sum('total') ?? 0,
+            'tanggalTerakhir' => Konser::latest('created_at')->first()?->created_at->format('d-m-Y') ?? 'N/A',
+            'bulanKonser' => $bulanKonser,
+            'jumlahTransaksiPerBulan' => $jumlahTransaksiPerBulan
+        ]);
     }
 }

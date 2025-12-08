@@ -14,15 +14,7 @@
             <p><strong>Email Pembeli:</strong> {{ $transaksi->email }}</p>
             <p><strong>Jumlah Tiket:</strong> {{ $transaksi->jumlah }}</p>
             <p><strong>Kelas Tiket:</strong> {{ $transaksi->kelas }}</p>
-            <p><strong>Harga Satuan:</strong>
-                @if($transaksi->kelas == 'Regular')
-                    Rp {{ number_format(250000, 0, ',', '.') }}
-                @elseif($transaksi->kelas == 'VIP')
-                    Rp {{ number_format(500000, 0, ',', '.') }}
-                @elseif($transaksi->kelas == 'VVIP')
-                    Rp {{ number_format(750000, 0, ',', '.') }}
-                @endif
-            </p>
+            <p><strong>Harga Satuan:</strong> {{ number_format($transaksi->harga, 0, ',', '.') }}</p>
         </div>
 
         <div class="kuitansi-total">
