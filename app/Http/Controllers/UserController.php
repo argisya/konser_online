@@ -25,15 +25,35 @@ class UserController extends Controller
             'password' => 'required',
         ]);
 
-        $user = User::where('email', $request->email)->first();
+       // Cari user berdasarkan email
+    $user = User::where('email', $request->email)->first();
 
-        if ($user && Hash::check($request->password, $user->password)) {
-            // Simpan informasi user ke session
-            session(['user_id' => $user->id, 'user_name' => $user->nama_lengkap]);
-            return redirect()->route('user.index')->with('success', 'Login berhasil!');
-        } else {
-            return redirect()->back()->withErrors(['login' => 'Email atau password salah.'])->withInput();
-        }
+    // Jika user tidak ditemukan ATAU password salah
+    if (!$user || !Hash::check($request->password, $user->password)) {
+        return redirect()->back()->withErrors(['login' => 'Email atau password salah.'])->withInput();
+    }
+
+    // Jika user role 1 (user biasa)
+    if ($user->role == 1) {
+        session([
+            'user_id' => $user->id,
+            'user_name' => $user->nama_lengkap
+        ]);
+        return redirect()->route('user.index')->with('success', 'Login berhasil sebagai User!');
+    }
+
+    // Jika user role 0 (admin)
+    if ($user->role == 0) {
+        session([
+            'admin_id' => $user->id,
+            'admin_name' => $user->nama_lengkap
+        ]);
+        return redirect()->route('admin.dashboard')->with('success', 'Login berhasil sebagai Admin!');
+    }
+
+    // Jika role tidak dikenali
+    return redirect()->back()->withErrors(['login' => 'Role pengguna tidak valid!']);
+
     }
 
     public function register()

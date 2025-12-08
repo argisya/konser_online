@@ -3,7 +3,10 @@
 namespace Database\Seeders;
 
 use App\Models\Konser;
+use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -41,5 +44,18 @@ class DatabaseSeeder extends Seeder
             'lokasi' => 'Stadion Utama Gelora Bung Karno',
             'deskripsi' => 'Konser festival musik ini sangat cocok untuk healing dan menikmati senja bersama teman-teman.'
         ]);
+
+        User::create([
+            'nama_lengkap' => 'Admin Konser',
+            'email' => 'admin@konser.com',
+            'password' => Hash::make('admin123'),
+            'role' => '0'
+        ]);
+
+        // DB::table('users')->insert([
+        //     'nama_lengkap' => 'Admin Konser',
+        //     'email' => 'admin@konser.com',
+        //     'password' => Hash::make('admin123'),
+        // ]);
     }
 }
