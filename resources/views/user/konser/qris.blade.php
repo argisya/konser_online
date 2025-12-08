@@ -44,7 +44,7 @@
                     clearInterval(interval);
 
                     // Redirect otomatis ke struk
-                    window.location.href = "{{ route('user.konser.struk', $konser->id) }}";
+                    window.location.href = "{{ route('user.konser.struk', $transaksi->order_id) }}";
                 }
             }, 1000);
         }

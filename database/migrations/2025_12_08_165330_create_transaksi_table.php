@@ -12,8 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('transaksi', function (Blueprint $table) {
-            $table->id();
-            $table->string('order_id')->unique();
+            $table->string('order_id')->primary();
             $table->string('nama');
             $table->string('email');
             $table->string('kelas');

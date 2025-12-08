@@ -1,21 +1,32 @@
 @extends('user.layout')
-@section('titlee', 'Transaksi - mini konser')
+@section('title', 'Transaksi - mini konser')
 @section('content')
 
-    <div class="struk-wrapper">
-        <h1 class="struk-title">Pembayaran Berhasil</h1>
+<div class="container">
+    <div class="kuitansi-container">
+        <h2 class="h2-style">Pembayaran Tiket Berhasil! </h2>
+        <p class="text-center mb-2">Berikut adalah detail kuitansi Anda. Simpan baik-baik ya!</p>
+        
+        <div class="kuitansi-detail">
+            <p><strong>No. Transaksi:</strong> INV-20251208-8BBEA</p>
+            <p><strong>Nama Konser:</strong> Sunset di Kebun 2025</p>
+            <p><strong>Nama Pembeli:</strong> Rizla Azc</p>
+            <p><strong>Email Pembeli:</strong> azchafahrezi@gmail.com</p>
+            <p><strong>Jumlah Tiket:</strong> 1 buah</p>
+            <p><strong>Kelas Tiket:</strong> VIP</p>
+            <p><strong>Harga Satuan:</strong> Rp 750.000</p>
+        </div>
 
-        <p class="struk-text">Order ID: <b>{{ $order_id }}</b></p>
-        <p class="struk-text">Nama: {{ $nama }}</p>
-        <p class="struk-text">Email: {{ $email }}</p>
-        <p class="struk-text">Kelas Tiket: {{ $kelas }}</p>
-        <p class="struk-text">Jumlah Tiket: {{ $jumlah }}</p>
-        <p class="struk-text">Total Pembayaran: Rp {{ number_format($total, 0, ',', '.') }}</p>
-        <p class="struk-text">Terima kasih telah melakukan pembelian tiket.</p>
+        <div class="kuitansi-total">
+            <h3>Total Pembayaran: Rp 750.000</h3>
+        </div>
 
-        <a href="{{ route('homepage') }}" class="btn-primary" style="margin-top:25px; display:inline-block;">
-            Kembali ke Beranda
-        </a>
+        <div class="kuitansi-actions">
+            <a href="{{ route('user.index') }}" class="btn btn-primary">Kembali ke Daftar Konser</a>
+            <a href="download_tiket.php" class="btn btn-primary" target="_blank">Unduh Tiket</a>
+        </div>
+         <p class="text-center mt-2" style="font-size:0.9em; color:#aaa;">Terima kasih telah melakukan pembelian tiket melalui Info Konser Bogor!</p>
     </div>
+</div>
 
 @endsection

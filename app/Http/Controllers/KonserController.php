@@ -28,44 +28,43 @@ class KonserController extends Controller
             'konser' => $konser,
         ]);
     }
+    
     public function pembayaran(Request $request)
     {
-        $konser = Konser::findOrFail($request->konser_id);
-        // Logika pemrosesan pembayaran dapat ditambahkan di sini
 
         // Generate Order ID
         $order_id = 'ORD-' . strtoupper(uniqid());
+        
         // Hitung total harga
-        $harga = $konser->harga;
         $jumlah = $request->jumlah;
-        $total = $harga * $jumlah;
+        $total =  $jumlah;
 
         // Simpan ke database
         Transaksi::create([
             'order_id' => $order_id,
-            'konser_id' => $konser->id,
             'nama' => $request->nama,
             'email' => $request->email,
             'jumlah' => $request->jumlah,
             'kelas' => $request->kelas,
-            'total_bayar' => $total,
+            'total' => $total
         ]);
 
-        return view('user.konser.qrcode', [
-            'konser' => $konser,
-        ]);
+        return redirect()->route('user.konser.qris', ['order_id' => $order_id]);
     }
-    public function qris($order_id)
+
+    public function qris(String $order_id)
     {
         $transaksi = Transaksi::where('order_id', $order_id)->firstOrFail();
-        return view('user.konser.qris', compact('transaksi'));
+        return view('user.konser.qris', [
+            'transaksi' => $transaksi,
+        ]);
     }
 
-    public function struk(String $id)
+    public function struk(String $order_id)
     {
-        $konser = Konser::findOrFail($id);
+        $transaksi = Transaksi::where('order_id', $order_id)->firstOrFail();
         return view('user.konser.struk', [
-            'konser' => $konser,
+            'transaksi' => $transaksi,
         ]);
     }
 }

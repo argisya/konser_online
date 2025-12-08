@@ -10,8 +10,9 @@ Route::get('/', function () {
 
 // user konser transaksi
 Route::get('/user/konser/transaksi/{id}', [KonserController::class, 'transaksi'])->name('user.konser.transaksi');
-Route::post('/user/konser/qrcode', [KonserController::class, 'pembayaran'])->name('user.konser.qrcode');
-Route::get('/user/konser/struk/{$id}', [KonserController::class, 'struk'])->name('user.konser.struk');
+Route::post('/user/pembayaranProcess', [KonserController::class, 'pembayaran'])->name('user.konser.pembayaranProcess');
+Route::get('/user/konser/struk/{order_id}', [KonserController::class, 'struk'])->name('user.konser.struk');
+Route::get('/user/konser/qris/{order_id}', [KonserController::class, 'qris'])->name('user.konser.qris');
 
 
 // user konser

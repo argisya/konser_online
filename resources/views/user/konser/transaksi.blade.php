@@ -6,9 +6,9 @@
             <h1 class="form-title">FORM PEMBELIAN TIKET</h1>
             <h2 class="form-subtitle">Bogoria Festival 2025</h2>
 
-            <form method="POST" action="{{ route('user.konser.qrcode') }}" class="ticket-form">
+            <form method="POST" action="{{ route('user.konser.pembayaranProcess') }}" class="ticket-form">
                 @csrf
-                <input type="hidden" name="konser_id" value="{{ $konser->id }}">
+                {{-- <input type="hidden" name="order_id" value="{{ $konser->id }}"> --}}
 
                 <label>Nama Lengkap Pembeli</label>
                 <input type="text" name="nama" placeholder="Masukkan nama lengkap" required>
