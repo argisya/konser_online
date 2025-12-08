@@ -7,8 +7,8 @@
             <h1>TEMUKAN KONSER FAVORITMU DI<br>BOGOR</h1>
             <p>Jangan lewatkan keseruan event musik terbaru di kota hujan!</p>
             <div class="hero-buttons">
-                <a href="#konser" class="btn-primary">Lihat Semua Konser</a>
-                <a href="#" class="btn-outline">Daftar Akun</a>
+                <a href="{{ route('user.konser.index') }}" class="btn-primary">Lihat Semua Konser</a>
+                <a href="{{ route('user.login.register') }}" class="btn-outline">Daftar Akun</a>
             </div>
         </div>
     </section>
@@ -20,35 +20,15 @@
         <div class="konser-grid">
 
             <!-- CARD 1 -->
-            <div class="card">
-                <img src="/img/bogoria_2023.jpg" alt="">
-                <div class="card-body">
-                    <h3>Sunset di Kebun 2025</h3>
-                    <p>Festival musik syahdu di tengah hijau Kebun Raya Bogor.</p>
-                    <button class="btn-primary w-100">Lihat Detail</button>
-                </div>
+            @foreach ($konser as $konser)
+            <div class="concert-card">
+                <img src="{{asset ('storage/img-konser/'. $konser->poster )}}" class="card-img" alt="">
+                <h3>{{$konser->nama}}</h3>
+                <p class="desc">{{$konser->deskripsi}}</p>
+                <p class="date">{{$konser->tanggal}}, {{$konser->lokasi}}</p>
+                <a href="{{route ('user.konser.detail', $konser->id )}}" class="btn-detail">LIHAT DETAIL</a>
             </div>
-
-            <!-- CARD 2 -->
-            <div class="card">
-                <img src="/img/bogoria_2025.jpg" alt="">
-                <div class="card-body">
-                    <h3>Soundsfest Xperience Bogor 2025</h3>
-                    <p>Ledakan energi musik lintas genre di lifestyle park favoritmu!</p>
-                    <button class="btn-primary w-100">Lihat Detail</button>
-                </div>
-            </div>
-
-            <!-- CARD 3 -->
-            <div class="card">
-                <img src="/img/mocca_popup_2024.jpg" alt="">
-                <div class="card-body">
-                    <h3>Bogoria Festival 2025</h3>
-                    <p>Gebyar musik awal tahun paling seru di Sentul!</p>
-                    <button class="btn-primary w-100">Lihat Detail</button>
-                </div>
-            </div>
-
+            @endforeach
         </div>
     </section>
 

@@ -45,15 +45,4 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <p>© 2025 mini konser. All Right Reserved.</p>
-        <p>Temukan kami di sosial media</p>
-        <div class="footer-links">
-            <a href="#">Instagram</a>
-            <a href="#">Tiktok</a>
-            <a href="#">X</a>
-        </div>
-    </footer>
-
 @endsection
