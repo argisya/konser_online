@@ -350,6 +350,64 @@ body {
     background: #ffe45e;
 }
 
+/* LOGIN SECTION */
+.login-section {
+    display: flex;
+    justify-content: center;
+    padding: 80px 0;
+}
+
+.login-box {
+    width: 380px;
+    background: #1b1b1b;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(255, 255, 0, 0.1);
+}
+
+.login-box input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 16px;
+    border: none;
+    border-radius: 8px;
+}
+
+.error-msg, .success-msg {
+    background: #ff4d4d;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.success-msg {
+    background: #4CAF50;
+}
+
+.yellow-title {
+    color: #facc15;
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.btn-back {
+    margin-top: 15px;
+    display: inline-block;
+    color: #facc15;
+    text-decoration: underline;
+    font-size: 14px;
+}
+
+
 /* FOOTER */
 .footer {
     text-align: center;
