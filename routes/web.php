@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\KonserController;
+use App\Http\Controllers\AdminDashboardController;
 
 Route::get('/', function () {
     return view('user/index');
@@ -14,11 +15,14 @@ Route::post('/user/pembayaranProcess', [KonserController::class, 'pembayaran'])-
 Route::get('/user/konser/struk/{order_id}', [KonserController::class, 'struk'])->name('user.konser.struk');
 Route::get('/user/konser/qris/{order_id}', [KonserController::class, 'qris'])->name('user.konser.qris');
 
-
 // user konser
 Route::get('/user', [UserController::class, 'index'])->name('user.index');
 Route::get('/user/konser', [KonserController::class, 'index'])->name('user.konser.index');
 Route::get('/user/konser/detail/{id}', [KonserController::class, 'detail'])->name('user.konser.detail');
+
+// admin dashboard
+Route::get('/admin/dashboard', [AdminDashboardController::class,'index'])->name('admin.dashboard');
+
 
 // user login
 Route::get('/user/login', [UserController::class, 'login'])->name('user.login.index');
