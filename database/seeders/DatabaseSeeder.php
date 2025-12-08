@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use App\Models\Konser;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Admin;
+use App\Models\Login;
 
 class DatabaseSeeder extends Seeder
 {
@@ -44,7 +44,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         //admin
-        Admin::create([
+        Login::create([
             'username' => 'superadmin',
             'password' => bcrypt('admin123')
         ]);

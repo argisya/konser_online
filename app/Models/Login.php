@@ -4,9 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Auth extends Model
+class Login extends Model
 {
     protected $fillable = ['username', 'password'];
-
     protected $hidden = ['password'];
 }
