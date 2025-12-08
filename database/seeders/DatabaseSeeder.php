@@ -5,7 +5,6 @@ namespace Database\Seeders;
 use App\Models\Konser;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Login;
 
 class DatabaseSeeder extends Seeder
 {
@@ -41,12 +40,6 @@ class DatabaseSeeder extends Seeder
             'waktu' => '19:00',
             'lokasi' => 'Stadion Utama Gelora Bung Karno',
             'deskripsi' => 'Konser festival musik ini sangat cocok untuk healing dan menikmati senja bersama teman-teman.'
-        ]);
-
-        //admin
-        Login::create([
-            'username' => 'superadmin',
-            'password' => bcrypt('admin123')
         ]);
     }
 }

@@ -24,7 +24,7 @@
         <div class="nav-links">
             <a href="{{ route('user.index') }}">Home</a>
             <a href="{{ route('user.konser.index') }}">Konser</a>
-            <a href="{{ route('login.index') }}">Login</a>
+            <a href="#">Login</a>
         </div>
     </nav>
 
