@@ -46,7 +46,7 @@ class DatabaseSeeder extends Seeder
         //admin
         Admin::create([
             'username' => 'superadmin',
-            'password' => Hash::make('admin123'),
+            'password' => bcrypt('admin123')
         ]);
     }
 }
