@@ -350,6 +350,196 @@ body {
     background: #ffe45e;
 }
 
+/* FORM PEMBELIAN TIKET */
+.form-wrapper {
+    max-width: 600px;
+    margin: 120px auto 50px auto;
+    background: #1a1a1a;
+    padding: 40px;
+    border-radius: 12px;
+}
+
+.form-title {
+    color: #facc15;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-subtitle {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.ticket-form label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 6px;
+    margin-top: 15px;
+}
+
+.ticket-form input,
+.ticket-form select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background: #222;
+    color: white;
+    margin-bottom: 5px;
+}
+
+/* QRIS PAGE STYLE */
+.pay-section {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:80px 0;
+    background:#111;
+}
+
+.pay-box {
+    background:#1f1f1f;
+    width:550px;
+    padding:40px;
+    border-radius:12px;
+    box-shadow:0 0 25px rgba(255,215,0,0.18);
+    text-align:center;
+    color:white;
+    font-family:Arial, sans-serif;
+}
+
+.pay-title {
+    color:#ffd700;
+    font-weight:700;
+    font-size:28px;
+    margin-bottom:8px;
+}
+
+.pay-subtitle {
+    color:#ccc;
+    font-size:14px;
+    margin-bottom:20px;
+}
+
+.pay-event-title {
+    font-size:19px;
+    font-weight:700;
+    margin-bottom:15px;
+}
+
+.pay-info-text {
+    color:#bbb;
+    font-size:14px;
+    margin-bottom:20px;
+}
+
+.qris-box {
+    background:#fff;
+    border:4px solid #ffd700;
+    width:230px;
+    height:230px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:10px;
+    margin:0 auto 18px auto;
+}
+
+.qris-img {
+    width:90%;
+    height:auto;
+}
+
+.pay-total {
+    font-size:16px;
+    margin-bottom:5px;
+}
+
+.pay-transaksi {
+    color:#ccc;
+    font-size:13px;
+    margin-bottom:15px;
+}
+
+.pay-time-title {
+    color:#ffd700;
+    font-size:16px;
+    font-weight:600;
+}
+
+.pay-countdown {
+    font-size:30px;
+    font-weight:700;
+    color:#fff;
+    margin-bottom:15px;
+}
+
+.pay-footer {
+    color:#aaa;
+    font-size:12px;
+    margin-top:10px;
+}
+
+.error-msg, .success-msg {
+    background: #ff4d4d;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.success-msg {
+    background: #4CAF50;
+}
+
+.yellow-title {
+    color: #facc15;
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.btn-back {
+    margin-top: 15px;
+    display: inline-block;
+    color: #facc15;
+    text-decoration: underline;
+    font-size: 14px;
+}
+
+.login-section {
+    display: flex;
+    justify-content: center;
+    padding: 80px 0;
+}
+
+.login-box {
+    width: 380px;
+    background: #1b1b1b;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(255, 255, 0, 0.1);
+}
+
+.login-box input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 16px;
+    border: none;
+    border-radius: 8px;
+}
+
 /* FOOTER */
 .footer {
     text-align: center;

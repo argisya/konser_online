@@ -8,6 +8,12 @@ Route::get('/', function () {
     return view('user/index');
 });
 
+// user konser transaksi
+Route::get('/user/konser/transaksi/{id}', [KonserController::class, 'transaksi'])->name('user.konser.transaksi');
+Route::post('/user/konser/qrcode', [KonserController::class, 'pembayaran'])->name('user.konser.qrcode');
+Route::get('/user/konser/struk/{$id}', [KonserController::class, 'struk'])->name('user.konser.struk');
+
+
 // user konser
 Route::get('/user', [UserController::class, 'index'])->name('user.index');
 Route::get('/user/konser', [KonserController::class, 'index'])->name('user.konser.index');
