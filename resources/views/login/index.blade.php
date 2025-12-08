@@ -1,8 +1,7 @@
-@extends('layouts.app')
+@extends('user.layout')
 @section('title', 'Login')
 @section('content')
 
-    
     <section class="login-section">
         <div class="login-box">
 
@@ -38,7 +37,7 @@
                 <button type="submit">Login</button>
             </form>
 
-            <a href="{{ route('homepage') }}" class="btn-back">Kembali</a>
+            <a href="{{ route('user.konser.index') }}" class="btn-back">Kembali</a>
         </div>
     </section>
 
