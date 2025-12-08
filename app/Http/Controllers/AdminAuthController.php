@@ -3,8 +3,39 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Admin;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AdminAuthController extends Controller
 {
-    //
+    public function showLogin()
+    {
+        return view('login.index');
+    }
+
+    public function login(Request $request)
+    {
+        $request->validate([
+            'username' => 'required',
+            'password' => 'required'
+        ]);
+
+        $admin = Admin::where('username', $request->username)->first();
+
+        if (!$admin || !Hash::check($request->password, $admin->password)) {
+            return back()->withErrors(['login' => 'Username atau password salah'])->withInput();
+        }
+
+        // Login admin
+        Auth::guard('admin')->login($admin);
+
+        return redirect()->route('admin.dashboard');
+    }
+
+    public function logout()
+    {
+        Auth::guard('admin')->logout();
+        return redirect()->route('login.index');
+    }
 }
