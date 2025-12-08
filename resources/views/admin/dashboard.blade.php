@@ -17,11 +17,11 @@
             <p>Total Transaksi</p>
         </div>
         <div class="card-box">
-            <h2>Rp {{ number_format($totalPendapatan) }}</h2>
+            <h2>Rp {{ number_format($total) }}</h2>
             <p>Total Pendapatan</p>
         </div>
         <div class="card-box">
-            <h2>{{ $tanggalTerakhir }}</h2>
+            <h2>{{ $tanggal }}</h2>
             <p>Tanggal Konser Terbaru</p>
         </div>
     </div>
