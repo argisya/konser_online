@@ -19,7 +19,7 @@
                     <p class="pay-transaksi"><b>Order ID:</b> {{ $transaksi->order_id }}</p>
                     <p class="pay-time-title">Selesaikan Pembayaran Dalam:</p>
                     <!-- COUNTDOWN -->
-                    <h2 style="color:#ffdd00; margin-top:20px;">Waktu Tersisa: <span id="countdown">2:00</span></h2>
+                    <h2 style="color:#ffdd00; margin-top:20px;">Waktu Tersisa: <span id="countdown">0:10</span></h2>
                     <p class="pay-footer">Anda Akan Otomatis diarahkan ke halaman kuitansi setelah pembeyaran berhasil atau waktu habis</p>
                 </div>
 

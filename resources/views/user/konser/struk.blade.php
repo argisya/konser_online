@@ -14,16 +14,16 @@
             <p><strong>Email Pembeli:</strong> {{ $transaksi->email }}</p>
             <p><strong>Jumlah Tiket:</strong> {{ $transaksi->jumlah }}</p>
             <p><strong>Kelas Tiket:</strong> {{ $transaksi->kelas }}</p>
-            <p><strong>Harga Satuan:</strong> {{ number_format($transaksi->harga, 0, ',', '.') }}</p>
+            <p><strong>Harga Satuan:</strong> Rp {{ number_format($transaksi->harga, 0, ',', '.') }}</p>
         </div>
 
         <div class="kuitansi-total">
-            <h3>Total Pembayaran: {{  number_format($transaksi->total, 0, ',', '.') }}</h3>
+            <h3>Total Pembayaran: Rp {{  number_format($transaksi->total, 0, ',', '.') }}</h3>
         </div>
 
         <div class="kuitansi-actions">
             <a href="{{ route('user.konser.index') }}" class="btn btn-primary">Kembali ke Daftar Konser</a>
-            <a href="download_tiket.php" class="btn btn-primary" target="_blank">Unduh Tiket</a>
+            <a href="{{ route('user.konser.pdf', $transaksi->order_id) }}" class="btn btn-primary" target="_blank">Unduh Tiket</a>
         </div>
          <p class="text-center mt-2" style="font-size:0.9em; color:#aaa;">Terima kasih telah melakukan pembelian tiket melalui Info Konser Bogor!</p>
     </div>

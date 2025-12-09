@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Konser;
 use App\Models\Transaksi;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class KonserController extends Controller
 {
@@ -77,5 +78,27 @@ class KonserController extends Controller
             'transaksi' => $transaksi,
             'detail' => $detail
         ]);
+    }
+
+    public function stream(string $order_id)
+    {
+        $barcodeImagePath =  'storage/img-konser/dummy_barcode.png';
+        $barcodeBase64 = '';
+        if (file_exists($barcodeImagePath)) {
+        $barcodeType = pathinfo($barcodeImagePath, PATHINFO_EXTENSION);
+        $barcodeData = file_get_contents($barcodeImagePath);
+        $barcodeBase64 = 'data:image/' . $barcodeType . ';base64,' . base64_encode($barcodeData);
+        }
+
+        $data = Transaksi::where('order_id', $order_id)->firstOrFail();
+        $detail = Konser::where('id', $data->konser_id)->firstOrFail();
+        $pdf = Pdf::loadView('user.konser.pdf', [
+            'transaksi' => $data,
+            'detail' => $detail,
+            'barcodeBase64' => $barcodeBase64
+        ]);
+        
+        
+        return $pdf->stream('struk-'.$order_id.'.pdf');
     }
 }

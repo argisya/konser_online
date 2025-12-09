@@ -20,6 +20,9 @@ Route::get('/user', [UserController::class, 'index'])->name('user.index');
 Route::get('/user/konser', [KonserController::class, 'index'])->name('user.konser.index');
 Route::get('/user/konser/detail/{id}', [KonserController::class, 'detail'])->name('user.konser.detail');
 
+//use cetak pdf
+Route::get('/user/konser/pdf/{order_id}', [KonserController::class, 'stream'])->name('user.konser.pdf');
+
 // admin dashboard
 Route::get('/admin/dashboard', [AdminDashboardController::class,'index'])->name('admin.dashboard');
 

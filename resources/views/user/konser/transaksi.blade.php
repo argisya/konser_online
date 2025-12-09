@@ -21,14 +21,14 @@
 
                 <label>Pilih Kelas Tiket</label>
                 <select name="kelas" required>
-                    <option value="Regular">Regular</option>
-                    <option value="VIP">VIP</option>
-                    <option value="VVIP">VVIP</option>
+                    <option value="Regular">Regular--250.000</option>
+                    <option value="VIP">VIP--500.000</option>
+                    <option value="VVIP">VVIP--750.000</option>
                 </select>
 
                 <button type="submit" class="btn-primary w-100" style="margin-top: 20px;">Lanjutkan Pembayaran</button>
                 
-                <a href="{{ route('user.konser.index') }}" class="btn-outline w-100" style="margin-top: 10px; display: block; text-align:center;">
+                <a href="{{ route('user.konser.index', ) }}" class="btn-outline w-100" style="margin-top: 10px; display: block; text-align:center;">
                     Kembali ke Konser
                 </a>
 
