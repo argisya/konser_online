@@ -26,7 +26,7 @@
             <a href="{{ route('admin.konser') }}">Data Konser</a>
             <a href="{{ route('admin.transaksi') }}">Data Pembayaran</a>
             @if (session('admin_id') == true)
-            <a href="#">Hi, {{ session('user_name') }}!</a>
+            <a href="#">Hi, {{ session('admin_name') }}!</a>
             <a href="{{ route('user.login.logout') }}">Logout</a>
             @endif
         </div>
