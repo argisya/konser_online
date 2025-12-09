@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
             'tanggal' => '2025-07-27',
             'waktu' => '16:00',
             'lokasi' => 'Kebun Raya Bogor',
-            'deskripsi' => 'Konser festival musik ini sangat cocok untuk healing dan menikmati senja bersama teman-teman.'
+            'deskripsi' => 'Koplove Festival 2025 siap membuat Stadion Pakansari bergetar! Dengan line-up dahsyat seperti NDX A.K.A, Happy Asmara, Mr. Jono & Joni, Guyon Waton, hingga Gildcoustic, siapkan dirimu untuk ambyar massal. Musik koplo, dangdut remix, dan atmosfer pesta rakyat akan membuatmu berjingkrak tanpa henti. Ajak seluruh pasukanmu dan rasakan semangatnya. Tiket sudah tersedia, sikat habis!'
         ]);
 
         Konser::create([
@@ -33,7 +33,7 @@ class DatabaseSeeder extends Seeder
             'tanggal' => '2025-08-15',
             'waktu' => '19:00',
             'lokasi' => 'Stadion Utama Gelora Bung Karno',
-            'deskripsi' => 'Konser festival musik ini sangat cocok untuk healing dan menikmati senja bersama teman-teman.'
+            'deskripsi' => 'Pekan Raya Nako 2025 kembali! Nikmati penampilan memukau dari Adhitia Sofyan, Rimaldi, Bernadya, Endah N Rhesa, dan Ambarila, sambil menjelajahi bazar kreatif dengan tenant fashion, tattoo, hingga tanaman. Bertempat di Kopi Nako Kebon Jati yang nyaman, ini adalah tempat terbaik untuk healing, nongkrong, dan menikmati sore yang inspiratif. Tiket terbatas, jangan sampai kehabisan!'
         ]);
 
         Konser::create([
@@ -42,7 +42,7 @@ class DatabaseSeeder extends Seeder
             'tanggal' => '2025-08-15',
             'waktu' => '19:00',
             'lokasi' => 'Stadion Utama Gelora Bung Karno',
-            'deskripsi' => 'Konser festival musik ini sangat cocok untuk healing dan menikmati senja bersama teman-teman.'
+            'deskripsi' => 'Festival Dwiwarna Nawasena 2025 adalah ledakan kreativitas anak muda! Menghadirkan penampilan spesial dari Jordan Susanto, HIVI!, dan Yovie & Nuno. Saksikan panggung meriah dengan dekorasi penuh warna dan nuansa retro modern yang memukau. Diselenggarakan di area terbuka hijau yang luas di Bogor Selatan, festival ini sempurna untuk menikmati musik berkualitas sambil bersantai. Jangan lewatkan gelaran epik ini, dapatkan tiketmu segera!'
         ]);
 
         User::create([

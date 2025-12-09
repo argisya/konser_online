@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\KonserController;
 use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\AdminKonserController;
 
 Route::get('/', function () {
     return view('user/index');
@@ -25,6 +26,13 @@ Route::get('/user/konser/pdf/{order_id}', [KonserController::class, 'stream'])->
 
 // admin dashboard
 Route::get('/admin/dashboard', [AdminDashboardController::class,'index'])->name('admin.dashboard');
+
+//admin data konser
+Route::get('/admin/konser', [AdminKonserController::class, 'Transaksi'])->name('admin.konser');
+Route::delete('/admin/konser/{id}', [AdminKonserController::class, 'destroy'])->name('admin.konser.destroy');
+
+//admin data pembayaran
+Route::get('/admin/transaksi', [AdminKonserController::class, 'index'])->name('admin.transaksi');
 
 
 // user login

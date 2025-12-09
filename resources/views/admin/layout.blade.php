@@ -22,14 +22,12 @@
         </div>
 
         <div class="nav-links">
-            <a href="{{ route('user.index') }}">Dashboard</a>
-            <a href="{{ route('user.konser.index') }}">Data Konser</a>
-            <a href="{{ route('user.konser.index') }}">Data Pembayaran</a>
-            @if (session('user_id') == true)
+            <a href="{{ route('admin.dashboard') }}">Dashboard</a>
+            <a href="{{ route('admin.konser') }}">Data Konser</a>
+            <a href="{{ route('admin.transaksi') }}">Data Pembayaran</a>
+            @if (session('admin_id') == true)
             <a href="#">Hi, {{ session('user_name') }}!</a>
             <a href="{{ route('user.login.logout') }}">Logout</a>
-            @elseif (session('user_id') == false)
-            <a href="{{ route('user.login.index') }}">Login</a>
             @endif
         </div>
     </nav>
