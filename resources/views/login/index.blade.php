@@ -34,10 +34,10 @@
                 <label>Password</label>
                 <input type="password" name="password" placeholder="Masukkan password Anda" required>
 
-                <button type="submit">Login</button>
+                <button type="submit" class="btn btn-primary">Login</button>
             </form>
             <p class="text-center mt-2">Belum punya akun? <a href="{{ route('user.login.register') }}" class="btn-back">Daftar di sini</a></p>
-            <a href="{{ route('user.konser.index') }}" class="btn-back">Kembali</a>
+            <a href="{{ route('user.konser.index') }}" class="btn btn-primary">Kembali</a>
         </div>
     </section>
 

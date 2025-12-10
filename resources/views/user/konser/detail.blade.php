@@ -16,7 +16,11 @@
                 <p><strong>Waktu:</strong> {{ $konser->waktu }}</p>
                 <p class="description"><strong>Deskripsi:</strong> {{ $konser->deskripsi }}</p>
 
+                @if(session('user_id')==true)
                 <a href="{{ route('user.konser.transaksi', ['id' => $konser->id]) }}" class="btn btn-primary">Pesan Tiket</a>
+                @else
+                <a href="{{ route('user.login.index') }}" class="btn btn-primary">Pesan Tiket</a>
+                @endif
             </div>
         </div>
     </div>

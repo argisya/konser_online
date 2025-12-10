@@ -17,6 +17,7 @@ Route::get('/user/konser/struk/{order_id}', [KonserController::class, 'struk'])-
 Route::get('/user/konser/qris/{order_id}', [KonserController::class, 'qris'])->name('user.konser.qris');
 
 // user konser
+Route::get('/', [UserController::class, 'index'])->name('home');
 Route::get('/user', [UserController::class, 'index'])->name('user.index');
 Route::get('/user/konser', [KonserController::class, 'index'])->name('user.konser.index');
 Route::get('/user/konser/detail/{id}', [KonserController::class, 'detail'])->name('user.konser.detail');
