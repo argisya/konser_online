@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Konser extends Model
 {
     protected $fillable = [
-        'nama', 'poster', 'tanggal', 'waktu', 'lokasi', 'deskripsi', 'link_tiket'
+        'nama', 'poster', 'tanggal', 'waktu', 'lokasi', 'deskripsi'
     ];
 
     protected $table = 'konser';

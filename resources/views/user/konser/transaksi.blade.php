@@ -11,10 +11,10 @@
                 <input type="hidden" name="konser_id" value="{{ $konser->id }}">
 
                 <label>Nama Lengkap Pembeli</label>
-                <input type="text" name="nama" placeholder="Masukkan nama lengkap" required>
+                <input type="text" name="nama" value="{{session('user_name')}}" placeholder="Masukkan nama lengkap" required>
 
                 <label>Alamat Email</label>
-                <input type="email" name="email" placeholder="Masukkan email aktif" required>
+                <input type="email" name="email" value="{{session('user_email')}}" placeholder="Masukkan email aktif" required>
 
                 <label>Jumlah Tiket</label>
                 <input type="number" min="1" name="jumlah" placeholder="Jumlah tiket" required>

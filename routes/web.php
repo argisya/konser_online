@@ -7,14 +7,14 @@ use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\AdminKonserController;
 
 Route::get('/', function () {
-    return view('user/index');
+    return view('user.index');
 });
 
 // user konser transaksi
 Route::get('/user/konser/transaksi/{id}', [KonserController::class, 'transaksi'])->name('user.konser.transaksi');
 Route::post('/user/pembayaranProcess', [KonserController::class, 'pembayaran'])->name('user.konser.pembayaranProcess');
-Route::get('/user/konser/struk/{order_id}', [KonserController::class, 'struk'])->name('user.konser.struk');
 Route::get('/user/konser/qris/{order_id}', [KonserController::class, 'qris'])->name('user.konser.qris');
+Route::get('/user/konser/struk/{order_id}', [KonserController::class, 'struk'])->name('user.konser.struk');
 
 // user konser
 Route::get('/', [UserController::class, 'index'])->name('home');
@@ -30,7 +30,9 @@ Route::get('/admin/dashboard', [AdminDashboardController::class,'index'])->name(
 
 //admin data konser
 Route::get('/admin/konser', [AdminKonserController::class, 'Transaksi'])->name('admin.konser');
-Route::delete('/admin/konser/{id}', [AdminKonserController::class, 'destroy'])->name('admin.konser.destroy');
+Route::get('/admin/create', [AdminKonserController::class, 'create'])->name('admin.create');
+Route::post('/admin/store', [AdminKonserController::class, 'store'])->name('admin.store');
+Route::delete('/admin/konser/destroy/{id}', [AdminKonserController::class, 'destroy'])->name('admin.konser.destroy');
 
 //admin data pembayaran
 Route::get('/admin/transaksi', [AdminKonserController::class, 'index'])->name('admin.transaksi');

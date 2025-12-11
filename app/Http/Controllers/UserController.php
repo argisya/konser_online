@@ -41,7 +41,8 @@ class UserController extends Controller
     if ($user->role == 1) {
         session([
             'user_id' => $user->id,
-            'user_name' => $user->nama_lengkap
+            'user_name' => $user->nama_lengkap,
+            'user_email' => $user->email
         ]);
         return redirect()->route('user.index')->with('success', 'Login berhasil sebagai User!');
     }

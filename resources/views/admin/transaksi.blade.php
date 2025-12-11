@@ -3,7 +3,7 @@
 @section('content')
 
 <h1 class="title">DATA PEMBAYARAN</h1>
-<p class="subtitle-admin">Semua Pembayaran yang diajukan oleh user terdaftar.</p>
+
 
 <table class="table-dark">
     <thead>

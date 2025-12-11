@@ -3,9 +3,11 @@
 @section('content')
 
 <h1 class="title">DATA KONSER USER</h1>
-<p class="subtitle-admin">Semua konser yang diajukan oleh user terdaftar.</p>
 
-<table class="table-dark">
+<a href="{{ route('admin.create') }}" class="btn btn-primary-add" style="margin-bottom: 15px; ">
+    + Tambah Konser
+</a> <br>
+<br><table class="table-dark">
     <thead>
         <tr>
             <th>No</th>
@@ -27,9 +29,9 @@
             <td>{{ $row->lokasi }}</td>
             <td>{{ $row->deskripsi }}</td>
             <td>
-                <form action="" method="POST">
+                <form action="{{ route('admin.konser.destroy' , $row->id) }}}" method="POST">
                     @csrf @method('DELETE')
-                    <button class="btn-delete">Hapus</button>
+                    <button class="btn-delete show_confirm" data-konf-delete="{{ $row->nama}}" title='Hapus Data'>Hapus</button>
                 </form>
             </td>
         </tr>

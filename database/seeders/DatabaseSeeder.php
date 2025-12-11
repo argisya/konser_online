@@ -31,7 +31,7 @@ class DatabaseSeeder extends Seeder
             'nama' => 'Rocking Jakarta 2025',
             'poster' => 'bogoria_2025.jpg',
             'tanggal' => '2025-08-15',
-            'waktu' => '19:00',
+            'waktu' => '18:00',
             'lokasi' => 'Stadion Utama Gelora Bung Karno',
             'deskripsi' => 'Pekan Raya Nako 2025 kembali! Nikmati penampilan memukau dari Adhitia Sofyan, Rimaldi, Bernadya, Endah N Rhesa, dan Ambarila, sambil menjelajahi bazar kreatif dengan tenant fashion, tattoo, hingga tanaman. Bertempat di Kopi Nako Kebon Jati yang nyaman, ini adalah tempat terbaik untuk healing, nongkrong, dan menikmati sore yang inspiratif. Tiket terbatas, jangan sampai kehabisan!'
         ]);
